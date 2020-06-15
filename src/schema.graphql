@@ -1,0 +1,33 @@
+type Query {
+  demo: String!
+}
+
+type Query {
+  movies: [Movie!]
+  movie(id: ID!): Movie
+}
+
+type Movie {
+  id: ID!
+  title: String!
+}
+
+interface Media {
+  id: ID!
+  title: String!
+}
+
+type Song implements Media {
+  id: ID!
+  title: String!
+  artist: String!
+}
+
+type Mutation {
+  createMovie(title: String!): Movie!
+}
+
+input MovieInput {
+  title: String!
+  director: String!
+}
